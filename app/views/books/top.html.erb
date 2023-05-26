@@ -1,0 +1,20 @@
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @book do |f| %>
+  <h1>ようこそBookersへ！</h1>
+
+  <h4>Bookersでは、さまざまな書籍に関するあなたの意見や</h4>
+
+  <h4>印象を共有し交換することができます</h4>
+
+  <%= link_to "start", '/books' %>
+
+<% end %>
